@@ -12,10 +12,13 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true, length = 50)
     private String username;
 
+    @Column(nullable = false)
     private String passwordHash;
 
+    @Column(nullable = false)
     private String role;
 
     private LocalDateTime createdAt = LocalDateTime.now();
